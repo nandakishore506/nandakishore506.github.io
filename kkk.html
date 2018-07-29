@@ -1,0 +1,80 @@
+<!doctype html>
+
+<!--
+
+LET'S GET MOVING!
+
+In this example we will make a moving entity!
+
+
+
+Can you make a sphere following a moving cube instead?
+
+-->
+
+<html>
+
+<head>
+
+  <title>Movement</title>
+
+  <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+<a-scene >
+
+
+
+   <!-- A camera  -->
+
+   <a-camera id="camera" position="0 1.8 4"></a-camera>
+
+
+
+   <!-- A target entity -->
+
+   <a-sphere id="target" color="#404040" radius="0.5">
+
+     <a-animation attribute="position" from="-12 6 -12" to="8 3 -2" dur="500" repeat="indefinite" fill="forwards" direction="alternate"></a-animation>
+
+   </a-sphere>
+
+
+
+   <!-- Entities look at the target -->
+
+   <a-cube width="1" depth="1" height="1" color="#4CC3D9" look-at="#target" position="-4 0 -2">
+        <a-animation attribute="position" from="-12 6 -10" to="8 3 -2" dur="500" repeat="indefinite" fill="forwards" direction="alternate"></a-animation>
+   </a-cube>
+
+   <a-cylinder radius="0.6" height="2" color="#7BC8A4" look-at="#target" position="0 0 -2">
+        <a-animation attribute="position" from="-12 6 -8" to="8 3 -2" dur="500" repeat="indefinite" fill="forwards" direction="alternate"></a-animation>
+   </a-cylinder>
+
+   <a-cube width="0.5" depth="1" height="2" color="#F16745" look-at="#target" position="4 0 -2">
+        <a-animation attribute="position" from="-12 6 -6" to="8 3 -2" dur="500" repeat="indefinite" fill="forwards" direction="alternate"></a-animation>
+   </a-cube>
+
+   <a-cylinder radius="0.2" height="2" color="#7BC8A4" look-at="#target" position="-4 0 1">
+        <a-animation attribute="position" from="-12 6 -4" to="8 3 -2" dur="500" repeat="indefinite" fill="forwards" direction="alternate"></a-animation>
+   </a-cylinder>
+
+
+   <!-- This entity looks at the camera. Use WASD controls to test it -->
+
+   <a-image position="0 -4 0" src="../_images/radial-highlight-1.png" rotation="-90 0 0" scale="10 10 10"></a-image>
+
+
+
+</a-scene>
+
+
+
+</body>
+
+</html>
